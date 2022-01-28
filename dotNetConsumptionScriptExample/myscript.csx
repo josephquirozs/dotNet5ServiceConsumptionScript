@@ -25,7 +25,7 @@ client.DefaultRequestHeaders.Accept.Add(item: new MediaTypeWithQualityHeaderValu
 ProductService productService = new ProductService(client: client);
 
 // Search resources
-await productService.GetAll();
+// await productService.GetAll(searchValue: "joseph (editado");
 
 // Retrieve a resource
 // await productService.GetOne(productId: 1);
@@ -123,6 +123,15 @@ public static class ProductSegments
 }
 // End of ProductSegments.cs
 
+// Start of ProductParameters.cs
+public static class ProductParameters
+{
+    public const string PageNumber = @"pageNumber";
+    public const string PageSize = @"pageSize";
+    public const string SearchValue = @"searchValue";
+}
+// End of ProductParameters.cs
+
 // Start of ProductService.cs
 public class ProductService
 {
@@ -133,9 +142,17 @@ public class ProductService
         _client = client;
     }
 
-    public async Task<IEnumerable<Product>> GetAll()
+    public async Task<IEnumerable<Product>> GetAll(int pageNumber = 1, int pageSize = 10, string searchValue = "")
     {
+        if (searchValue == null)
+        {
+            throw new ArgumentException("Search value must not be null");
+        }
+        string fSearchValue = System.Net.WebUtility.UrlEncode(searchValue.Trim());
         string endpointUri = RenderEndpointUri(method: HttpMethod.Get, endpoint: ProductEndpoints.GetAll);
+        endpointUri += $"?{ProductParameters.PageNumber}={pageNumber}";
+        endpointUri += $"&{ProductParameters.PageSize}={pageSize}";
+        endpointUri += $"&{ProductParameters.SearchValue}={fSearchValue}";
         string requestUrl = $"{_client.BaseAddress}{endpointUri}";
         Console.WriteLine($"Request GET to {requestUrl}");
         HttpResponseMessage response = await _client.GetAsync(requestUri: endpointUri);
