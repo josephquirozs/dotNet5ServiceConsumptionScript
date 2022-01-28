@@ -25,7 +25,7 @@ client.DefaultRequestHeaders.Accept.Add(item: new MediaTypeWithQualityHeaderValu
 ProductService productService = new ProductService(client: client);
 
 // Search resources
-// await productService.GetAll(searchValue: "joseph (editado");
+await productService.GetAll(searchValue: "");
 
 // Retrieve a resource
 // await productService.GetOne(productId: 1);
@@ -34,9 +34,9 @@ ProductService productService = new ProductService(client: client);
 // await productService.Post(new Product()
 // {
 //     ProductId = null,
-//     Name = "JOSEPH",
-//     Price = 123456.99m,
-//     Stock = 123.0m,
+//     Name = "IPHONE 13",
+//     Price = 999.99m,
+//     Stock = 99.0m,
 //     Unit = "UND",
 //     Expiration = DateTime.Now,
 // });
@@ -45,15 +45,15 @@ ProductService productService = new ProductService(client: client);
 // await productService.Put(new Product()
 // {
 //     ProductId = 1,
-//     Name = "JOSEPH (EDITADO 4)",
-//     Price = 0.0m,
+//     Name = "IPHONE 13 (EDITADO 1)",
+//     Price = 999.99m,
 //     Stock = 0.0m,
-//     Unit = "KG",
+//     Unit = "UND",
 //     Expiration = DateTime.Now,
 // });
 
 // Delete resource
-// await productService.Delete(productId: 135);
+// await productService.Delete(productId: 101);
 
 // Start of Product.cs
 public partial class Product
