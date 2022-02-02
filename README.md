@@ -10,9 +10,9 @@ dotnet tool install --global dotnet-script --version 1.3.1
 ```
 
 ## Usage
-Go to sub-directory `PROJECT_ROOT/dotNetConsumptionScriptExample`.
+Go to sub-directory `PROJECT_ROOT/dotNet5ServiceConsumptionScript`.
 ```shell
-cd dotNetConsumptionScriptExample
+cd dotNet5ServiceConsumptionScript
 ```
 
 Run the script.
