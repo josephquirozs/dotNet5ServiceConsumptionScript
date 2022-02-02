@@ -1,4 +1,4 @@
-# dotNetConsumptionScriptExample
+# dotNet5ServiceConsumptionScript
 .NET Core service consumption script example.
 
 ## Install dotnet-script from .NET CLI
