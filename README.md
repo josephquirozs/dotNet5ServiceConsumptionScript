@@ -1,7 +1,7 @@
 # dotNet5ServiceConsumptionScript
 .NET service consumption script example.
 
-## Specifications
+## Requirements
 * .NET 5
 
 ## Install dotnet-script from .NET CLI
