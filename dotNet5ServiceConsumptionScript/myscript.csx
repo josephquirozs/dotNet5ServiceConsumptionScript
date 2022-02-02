@@ -17,7 +17,7 @@ Console.WriteLine("Running script...");
 
 // Configuring HTTP Client
 HttpClient client = new HttpClient();
-client.BaseAddress = new Uri(uriString: "http://192.168.1.57:5000/api/");
+client.BaseAddress = new Uri(uriString: "http://localhost:5000/api/");
 client.DefaultRequestHeaders.Accept.Clear();
 client.DefaultRequestHeaders.Accept.Add(item: new MediaTypeWithQualityHeaderValue("application/json"));
 
